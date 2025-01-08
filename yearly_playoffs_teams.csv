@@ -1,0 +1,537 @@
+season,conference,team
+2023,West,Minnesota Timberwolves
+2023,West,Los Angeles Clippers
+2023,West,Sacramento Kings
+2023,West,Memphis Grizzlies
+2023,West,Denver Nuggets
+2023,West,Phoenix Suns
+2023,West,Golden State Warriors
+2023,West,Los Angeles Lakers
+2023,East,Milwaukee Bucks
+2023,East,Cleveland Cavaliers
+2023,East,Brooklyn Nets
+2023,East,Atlanta Hawks
+2023,East,Miami Heat
+2023,East,New York Knicks
+2023,East,Philadelphia 76ers
+2023,East,Boston Celtics
+2022,West,Minnesota Timberwolves
+2022,West,Denver Nuggets
+2022,West,Utah Jazz
+2022,West,New Orleans Pelicans
+2022,West,Memphis Grizzlies
+2022,West,Golden State Warriors
+2022,West,Dallas Mavericks
+2022,West,Phoenix Suns
+2022,East,Chicago Bulls
+2022,East,Brooklyn Nets
+2022,East,Toronto Raptors
+2022,East,Atlanta Hawks
+2022,East,Milwaukee Bucks
+2022,East,Boston Celtics
+2022,East,Philadelphia 76ers
+2022,East,Miami Heat
+2021,West,Dallas Mavericks
+2021,West,Portland Trail Blazers
+2021,West,Memphis Grizzlies
+2021,West,Los Angeles Lakers
+2021,West,Los Angeles Clippers
+2021,West,Denver Nuggets
+2021,West,Utah Jazz
+2021,West,Phoenix Suns
+2021,East,Miami Heat
+2021,East,Boston Celtics
+2021,East,Washington Wizards
+2021,East,New York Knicks
+2021,East,Milwaukee Bucks
+2021,East,Brooklyn Nets
+2021,East,Philadelphia 76ers
+2021,East,Atlanta Hawks
+2020,West,Portland Trail Blazers
+2020,West,Dallas Mavericks
+2020,West,Utah Jazz
+2020,West,Oklahoma City Thunder
+2020,West,Los Angeles Lakers
+2020,West,Los Angeles Clippers
+2020,West,Denver Nuggets
+2020,West,Houston Rockets
+2020,East,Orlando Magic
+2020,East,Brooklyn Nets
+2020,East,Philadelphia 76ers
+2020,East,Indiana Pacers
+2020,East,Milwaukee Bucks
+2020,East,Toronto Raptors
+2020,East,Boston Celtics
+2020,East,Miami Heat
+2019,West,Los Angeles Clippers
+2019,West,San Antonio Spurs
+2019,West,Oklahoma City Thunder
+2019,West,Utah Jazz
+2019,West,Golden State Warriors
+2019,West,Denver Nuggets
+2019,West,Portland Trail Blazers
+2019,West,Houston Rockets
+2019,East,Detroit Pistons
+2019,East,Orlando Magic
+2019,East,Brooklyn Nets
+2019,East,Indiana Pacers
+2019,East,Milwaukee Bucks
+2019,East,Toronto Raptors
+2019,East,Philadelphia 76ers
+2019,East,Boston Celtics
+2018,West,Minnesota Timberwolves
+2018,West,San Antonio Spurs
+2018,West,Portland Trail Blazers
+2018,West,Oklahoma City Thunder
+2018,West,Houston Rockets
+2018,West,Golden State Warriors
+2018,West,New Orleans Pelicans
+2018,West,Utah Jazz
+2018,East,Washington Wizards
+2018,East,Milwaukee Bucks
+2018,East,Miami Heat
+2018,East,Indiana Pacers
+2018,East,Toronto Raptors
+2018,East,Boston Celtics
+2018,East,Philadelphia 76ers
+2018,East,Cleveland Cavaliers
+2017,West,Portland Trail Blazers
+2017,West,Memphis Grizzlies
+2017,West,Oklahoma City Thunder
+2017,West,Los Angeles Clippers
+2017,West,Golden State Warriors
+2017,West,San Antonio Spurs
+2017,West,Houston Rockets
+2017,West,Utah Jazz
+2017,East,Chicago Bulls
+2017,East,Indiana Pacers
+2017,East,Milwaukee Bucks
+2017,East,Atlanta Hawks
+2017,East,Boston Celtics
+2017,East,Cleveland Cavaliers
+2017,East,Toronto Raptors
+2017,East,Washington Wizards
+2016,West,Houston Rockets
+2016,West,Memphis Grizzlies
+2016,West,Dallas Mavericks
+2016,West,Los Angeles Clippers
+2016,West,Golden State Warriors
+2016,West,San Antonio Spurs
+2016,West,Oklahoma City Thunder
+2016,West,Portland Trail Blazers
+2016,East,Detroit Pistons
+2016,East,Indiana Pacers
+2016,East,Charlotte Hornets
+2016,East,Boston Celtics
+2016,East,Cleveland Cavaliers
+2016,East,Toronto Raptors
+2016,East,Miami Heat
+2016,East,Atlanta Hawks
+2015,West,New Orleans Pelicans
+2015,West,Dallas Mavericks
+2015,West,San Antonio Spurs
+2015,West,Portland Trail Blazers
+2015,West,Golden State Warriors
+2015,West,Houston Rockets
+2015,West,Los Angeles Clippers
+2015,West,Memphis Grizzlies
+2015,East,Brooklyn Nets
+2015,East,Boston Celtics
+2015,East,Milwaukee Bucks
+2015,East,Toronto Raptors
+2015,East,Atlanta Hawks
+2015,East,Cleveland Cavaliers
+2015,East,Chicago Bulls
+2015,East,Washington Wizards
+2014,West,Dallas Mavericks
+2014,West,Memphis Grizzlies
+2014,West,Golden State Warriors
+2014,West,Houston Rockets
+2014,West,San Antonio Spurs
+2014,West,Oklahoma City Thunder
+2014,West,Los Angeles Clippers
+2014,West,Portland Trail Blazers
+2014,East,Atlanta Hawks
+2014,East,Charlotte Bobcats
+2014,East,Toronto Raptors
+2014,East,Chicago Bulls
+2014,East,Indiana Pacers
+2014,East,Miami Heat
+2014,East,Brooklyn Nets
+2014,East,Washington Wizards
+2013,West,Houston Rockets
+2013,West,Los Angeles Lakers
+2013,West,Denver Nuggets
+2013,West,Los Angeles Clippers
+2013,West,Oklahoma City Thunder
+2013,West,San Antonio Spurs
+2013,West,Golden State Warriors
+2013,West,Memphis Grizzlies
+2013,East,Milwaukee Bucks
+2013,East,Boston Celtics
+2013,East,Atlanta Hawks
+2013,East,Brooklyn Nets
+2013,East,Miami Heat
+2013,East,New York Knicks
+2013,East,Indiana Pacers
+2013,East,Chicago Bulls
+2012,West,Utah Jazz
+2012,West,Dallas Mavericks
+2012,West,Denver Nuggets
+2012,West,Memphis Grizzlies
+2012,West,San Antonio Spurs
+2012,West,Oklahoma City Thunder
+2012,West,Los Angeles Lakers
+2012,West,Los Angeles Clippers
+2012,East,Chicago Bulls
+2012,East,New York Knicks
+2012,East,Orlando Magic
+2012,East,Atlanta Hawks
+2012,East,Philadelphia 76ers
+2012,East,Miami Heat
+2012,East,Indiana Pacers
+2012,East,Boston Celtics
+2011,West,San Antonio Spurs
+2011,West,New Orleans Hornets
+2011,West,Portland Trail Blazers
+2011,West,Denver Nuggets
+2011,West,Memphis Grizzlies
+2011,West,Los Angeles Lakers
+2011,West,Dallas Mavericks
+2011,West,Oklahoma City Thunder
+2011,East,Indiana Pacers
+2011,East,Philadelphia 76ers
+2011,East,New York Knicks
+2011,East,Orlando Magic
+2011,East,Chicago Bulls
+2011,East,Miami Heat
+2011,East,Boston Celtics
+2011,East,Atlanta Hawks
+2010,West,Oklahoma City Thunder
+2010,West,Dallas Mavericks
+2010,West,Portland Trail Blazers
+2010,West,Denver Nuggets
+2010,West,Los Angeles Lakers
+2010,West,San Antonio Spurs
+2010,West,Phoenix Suns
+2010,West,Utah Jazz
+2010,East,Chicago Bulls
+2010,East,Charlotte Bobcats
+2010,East,Milwaukee Bucks
+2010,East,Miami Heat
+2010,East,Cleveland Cavaliers
+2010,East,Orlando Magic
+2010,East,Atlanta Hawks
+2010,East,Boston Celtics
+2009,West,Utah Jazz
+2009,West,New Orleans Hornets
+2009,West,San Antonio Spurs
+2009,West,Portland Trail Blazers
+2009,West,Los Angeles Lakers
+2009,West,Denver Nuggets
+2009,West,Dallas Mavericks
+2009,West,Houston Rockets
+2009,East,Detroit Pistons
+2009,East,Chicago Bulls
+2009,East,Philadelphia 76ers
+2009,East,Miami Heat
+2009,East,Cleveland Cavaliers
+2009,East,Boston Celtics
+2009,East,Orlando Magic
+2009,East,Atlanta Hawks
+2008,West,Denver Nuggets
+2008,West,Dallas Mavericks
+2008,West,Phoenix Suns
+2008,West,Houston Rockets
+2008,West,Los Angeles Lakers
+2008,West,New Orleans Hornets
+2008,West,San Antonio Spurs
+2008,West,Utah Jazz
+2008,East,Atlanta Hawks
+2008,East,Philadelphia 76ers
+2008,East,Toronto Raptors
+2008,East,Washington Wizards
+2008,East,Boston Celtics
+2008,East,Detroit Pistons
+2008,East,Orlando Magic
+2008,East,Cleveland Cavaliers
+2007,West,Dallas Mavericks
+2007,West,Los Angeles Lakers
+2007,West,Denver Nuggets
+2007,West,Houston Rockets
+2007,West,Golden State Warriors
+2007,West,Phoenix Suns
+2007,West,San Antonio Spurs
+2007,West,Utah Jazz
+2007,East,Miami Heat
+2007,East,Washington Wizards
+2007,East,Orlando Magic
+2007,East,Toronto Raptors
+2007,East,Chicago Bulls
+2007,East,Cleveland Cavaliers
+2007,East,Detroit Pistons
+2007,East,New Jersey Nets
+2006,West,Memphis Grizzlies
+2006,West,Denver Nuggets
+2006,West,Los Angeles Lakers
+2006,West,Sacramento Kings
+2006,West,Dallas Mavericks
+2006,West,Los Angeles Clippers
+2006,West,Phoenix Suns
+2006,West,San Antonio Spurs
+2006,East,Washington Wizards
+2006,East,Milwaukee Bucks
+2006,East,Chicago Bulls
+2006,East,Indiana Pacers
+2006,East,Cleveland Cavaliers
+2006,East,Detroit Pistons
+2006,East,Miami Heat
+2006,East,New Jersey Nets
+2005,West,Houston Rockets
+2005,West,Memphis Grizzlies
+2005,West,Denver Nuggets
+2005,West,Sacramento Kings
+2005,West,Dallas Mavericks
+2005,West,Phoenix Suns
+2005,West,San Antonio Spurs
+2005,West,Seattle SuperSonics
+2005,East,Philadelphia 76ers
+2005,East,Boston Celtics
+2005,East,New Jersey Nets
+2005,East,Chicago Bulls
+2005,East,Detroit Pistons
+2005,East,Indiana Pacers
+2005,East,Miami Heat
+2005,East,Washington Wizards
+2004,West,Houston Rockets
+2004,West,Denver Nuggets
+2004,West,Dallas Mavericks
+2004,West,Memphis Grizzlies
+2004,West,Los Angeles Lakers
+2004,West,Minnesota Timberwolves
+2004,West,Sacramento Kings
+2004,West,San Antonio Spurs
+2004,East,Milwaukee Bucks
+2004,East,Boston Celtics
+2004,East,New Orleans Hornets
+2004,East,New York Knicks
+2004,East,Detroit Pistons
+2004,East,Indiana Pacers
+2004,East,Miami Heat
+2004,East,New Jersey Nets
+2003,West,Portland Trail Blazers
+2003,West,Minnesota Timberwolves
+2003,West,Utah Jazz
+2003,West,Phoenix Suns
+2003,West,Dallas Mavericks
+2003,West,Los Angeles Lakers
+2003,West,Sacramento Kings
+2003,West,San Antonio Spurs
+2003,East,Indiana Pacers
+2003,East,Orlando Magic
+2003,East,Milwaukee Bucks
+2003,East,New Orleans Hornets
+2003,East,Boston Celtics
+2003,East,Detroit Pistons
+2003,East,New Jersey Nets
+2003,East,Philadelphia 76ers
+2002,West,Minnesota Timberwolves
+2002,West,Portland Trail Blazers
+2002,West,Utah Jazz
+2002,West,Seattle SuperSonics
+2002,West,Dallas Mavericks
+2002,West,Los Angeles Lakers
+2002,West,Sacramento Kings
+2002,West,San Antonio Spurs
+2002,East,Philadelphia 76ers
+2002,East,Orlando Magic
+2002,East,Toronto Raptors
+2002,East,Indiana Pacers
+2002,East,Boston Celtics
+2002,East,Charlotte Hornets
+2002,East,Detroit Pistons
+2002,East,New Jersey Nets
+2001,West,Utah Jazz
+2001,West,Portland Trail Blazers
+2001,West,Phoenix Suns
+2001,West,Minnesota Timberwolves
+2001,West,Dallas Mavericks
+2001,West,Los Angeles Lakers
+2001,West,Sacramento Kings
+2001,West,San Antonio Spurs
+2001,East,Miami Heat
+2001,East,Orlando Magic
+2001,East,Indiana Pacers
+2001,East,New York Knicks
+2001,East,Charlotte Hornets
+2001,East,Milwaukee Bucks
+2001,East,Philadelphia 76ers
+2001,East,Toronto Raptors
+2000,West,Sacramento Kings
+2000,West,San Antonio Spurs
+2000,West,Minnesota Timberwolves
+2000,West,Seattle SuperSonics
+2000,West,Los Angeles Lakers
+2000,West,Phoenix Suns
+2000,West,Portland Trail Blazers
+2000,West,Utah Jazz
+2000,East,Milwaukee Bucks
+2000,East,Detroit Pistons
+2000,East,Toronto Raptors
+2000,East,Charlotte Hornets
+2000,East,Indiana Pacers
+2000,East,Miami Heat
+2000,East,New York Knicks
+2000,East,Philadelphia 76ers
+1999,West,Houston Rockets
+1999,West,Phoenix Suns
+1999,West,Minnesota Timberwolves
+1999,West,Sacramento Kings
+1999,West,Los Angeles Lakers
+1999,West,Portland Trail Blazers
+1999,West,San Antonio Spurs
+1999,West,Utah Jazz
+1999,East,Detroit Pistons
+1999,East,Milwaukee Bucks
+1999,East,Miami Heat
+1999,East,Orlando Magic
+1999,East,Atlanta Hawks
+1999,East,Indiana Pacers
+1999,East,New York Knicks
+1999,East,Philadelphia 76ers
+1998,West,Portland Trail Blazers
+1998,West,Phoenix Suns
+1998,West,Minnesota Timberwolves
+1998,West,Houston Rockets
+1998,West,Los Angeles Lakers
+1998,West,San Antonio Spurs
+1998,West,Seattle SuperSonics
+1998,West,Utah Jazz
+1998,East,Atlanta Hawks
+1998,East,New Jersey Nets
+1998,East,Cleveland Cavaliers
+1998,East,Miami Heat
+1998,East,Charlotte Hornets
+1998,East,Chicago Bulls
+1998,East,Indiana Pacers
+1998,East,New York Knicks
+1997,West,Minnesota Timberwolves
+1997,West,Portland Trail Blazers
+1997,West,Phoenix Suns
+1997,West,Los Angeles Clippers
+1997,West,Houston Rockets
+1997,West,Los Angeles Lakers
+1997,West,Seattle SuperSonics
+1997,West,Utah Jazz
+1997,East,Detroit Pistons
+1997,East,Washington Bullets
+1997,East,Orlando Magic
+1997,East,Charlotte Hornets
+1997,East,Atlanta Hawks
+1997,East,Chicago Bulls
+1997,East,Miami Heat
+1997,East,New York Knicks
+1996,West,Los Angeles Lakers
+1996,West,Phoenix Suns
+1996,West,Sacramento Kings
+1996,West,Portland Trail Blazers
+1996,West,Houston Rockets
+1996,West,San Antonio Spurs
+1996,West,Seattle SuperSonics
+1996,West,Utah Jazz
+1996,East,Indiana Pacers
+1996,East,Miami Heat
+1996,East,Cleveland Cavaliers
+1996,East,Detroit Pistons
+1996,East,Atlanta Hawks
+1996,East,Chicago Bulls
+1996,East,New York Knicks
+1996,East,Orlando Magic
+1995,West,Utah Jazz
+1995,West,Seattle SuperSonics
+1995,West,Portland Trail Blazers
+1995,West,Denver Nuggets
+1995,West,Houston Rockets
+1995,West,Los Angeles Lakers
+1995,West,Phoenix Suns
+1995,West,San Antonio Spurs
+1995,East,Charlotte Hornets
+1995,East,Atlanta Hawks
+1995,East,Cleveland Cavaliers
+1995,East,Boston Celtics
+1995,East,Chicago Bulls
+1995,East,Indiana Pacers
+1995,East,New York Knicks
+1995,East,Orlando Magic
+1994,West,Seattle SuperSonics
+1994,West,Portland Trail Blazers
+1994,West,Golden State Warriors
+1994,West,San Antonio Spurs
+1994,West,Denver Nuggets
+1994,West,Houston Rockets
+1994,West,Phoenix Suns
+1994,West,Utah Jazz
+1994,East,Miami Heat
+1994,East,Cleveland Cavaliers
+1994,East,Orlando Magic
+1994,East,New Jersey Nets
+1994,East,Atlanta Hawks
+1994,East,Chicago Bulls
+1994,East,Indiana Pacers
+1994,East,New York Knicks
+1993,West,Los Angeles Clippers
+1993,West,Los Angeles Lakers
+1993,West,Portland Trail Blazers
+1993,West,Utah Jazz
+1993,West,Houston Rockets
+1993,West,Phoenix Suns
+1993,West,San Antonio Spurs
+1993,West,Seattle SuperSonics
+1993,East,Boston Celtics
+1993,East,Atlanta Hawks
+1993,East,New Jersey Nets
+1993,East,Indiana Pacers
+1993,East,Charlotte Hornets
+1993,East,Chicago Bulls
+1993,East,Cleveland Cavaliers
+1993,East,New York Knicks
+1992,West,San Antonio Spurs
+1992,West,Los Angeles Lakers
+1992,West,Golden State Warriors
+1992,West,Los Angeles Clippers
+1992,West,Phoenix Suns
+1992,West,Portland Trail Blazers
+1992,West,Seattle SuperSonics
+1992,West,Utah Jazz
+1992,East,Indiana Pacers
+1992,East,Miami Heat
+1992,East,New Jersey Nets
+1992,East,Detroit Pistons
+1992,East,Boston Celtics
+1992,East,Chicago Bulls
+1992,East,Cleveland Cavaliers
+1992,East,New York Knicks
+1991,West,San Antonio Spurs
+1991,West,Houston Rockets
+1991,West,Seattle SuperSonics
+1991,West,Phoenix Suns
+1991,West,Golden State Warriors
+1991,West,Los Angeles Lakers
+1991,West,Portland Trail Blazers
+1991,West,Utah Jazz
+1991,East,Indiana Pacers
+1991,East,New York Knicks
+1991,East,Atlanta Hawks
+1991,East,Milwaukee Bucks
+1991,East,Boston Celtics
+1991,East,Chicago Bulls
+1991,East,Detroit Pistons
+1991,East,Philadelphia 76ers
+1990,East,Milwaukee Bucks
+1990,East,Indiana Pacers
+1990,East,Boston Celtics
+1990,East,Cleveland Cavaliers
+1990,East,Chicago Bulls
+1990,East,Detroit Pistons
+1990,East,New York Knicks
+1990,East,Philadelphia 76ers

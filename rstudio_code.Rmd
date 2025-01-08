@@ -1,0 +1,396 @@
+---
+title: "ISYE 6414 Project"
+author: "Sahil Bishnoi, Josh Garretson, Alina Gorbunova, Oliver Hewett, Tyson King"
+output: pdf_document
+---
+
+```
+```
+
+
+```{r}
+# # install.packages("hoopR")
+# 
+# library(hoopR)
+# library(tidyverse)
+# 
+# team_box <- load_nba_team_box(2002:2023) %>%
+#   filter(season_type == 2)
+# 
+# records <- team_box %>%
+#   mutate(win = team_score > opponent_team_score) %>%
+#   group_by(season, team_id) %>%
+#   summarise(wins = sum(win),
+#             losses = n() - wins)
+# 
+# team_season_box <- team_box %>%
+#   filter(!str_detect(team_name, "All-Stars|Team|World|USA")) %>%
+#   group_by(season, team_id, team_name) %>%
+#   mutate(two_point_field_goals_made = field_goals_made - three_point_field_goals_made,
+#          two_point_field_goals_attempted = field_goals_attempted - three_point_field_goals_attempted,
+#          two_point_field_goal_pct = two_point_field_goals_made / two_point_field_goals_attempted) %>%
+#   summarise(across(
+#     .cols = c(team_score, opponent_team_score, assists, blocks, defensive_rebounds, offensive_rebounds, two_point_field_goal_pct, two_point_field_goals_attempted,
+#               three_point_field_goal_pct, three_point_field_goals_attempted, turnovers, free_throw_pct, free_throws_attempted),
+#     .fns = \(col) mean(as.numeric(col)))) %>%
+#   ungroup() %>%
+#   merge(records, by = c("season", "team_id"))
+
+```
+
+```{r}
+# library(dplyr)
+# 
+# all_data <- list()
+# 
+# # looping through years from 2002 to 2023
+# for(season in 2002:2023) {
+#   # Read the CSV file
+#   df <- read.csv(paste0(season, ".csv"))
+#   
+#   # add a new column with the respective year
+#   df$season <- season
+#   
+#   # append the data frame to the list
+#   all_data[[as.character(season)]] <- df
+# }
+# 
+# # merge all data frames on top of each other
+# team_conf_adv <- bind_rows(all_data)team_conf_adv
+```
+
+```{r}
+# write.csv(records, "records.csv", row.names = FALSE)
+# write.csv(team_box, "team_box.csv", row.names = FALSE)
+# write.csv(team_season_box, "team_season_box.csv", row.names = FALSE)
+# write.csv(team_conf_adv, "team_conf_adv.csv", row.names = FALSE)
+```
+
+
+```{r}
+# loading data in R
+records <- read.csv("records.csv", header = TRUE)
+team_box <- read.csv("team_box.csv", header = TRUE)
+team_season_box <- read.csv("team_season_box.csv", header = TRUE)
+team_conf_adv <- read.csv("team_conf_adv.csv", header = TRUE)
+yearly_playoffs_teams <- read.csv("yearly_playoffs_teams.csv", header = TRUE)
+
+```
+
+```{r}
+library(dplyr)
+
+# creating lookup table of team and team_display_name
+unique_teams <- team_box %>%
+  distinct(season, team_name, team_display_name) %>%
+  select(season, team_name, team_display_name)
+
+# bringing team_display_name in team_season_box dataset
+team_season_box_v2 <- left_join(team_season_box, unique_teams, by = c("season", "team_name"))
+
+
+# changing names of teams LA Clippers and NO/Oklahoma City Hornets to match the format in other datasets
+team_season_box_v2 <- team_season_box_v2 %>%
+  mutate(team_display_name = ifelse(team_display_name == "LA Clippers", "Los Angeles Clippers", team_display_name))
+
+team_season_box_v2 <- team_season_box_v2 %>%
+  mutate(team_display_name = ifelse(team_display_name %in% c("NO/Oklahoma City Hornets", "NO/Oklahoma City  Hornets"), 
+                                    "New Orleans/Oklahoma City Hornets", 
+                                    team_display_name))
+
+# changing column names of team_conf_adv dataset to lowercase
+colnames(team_conf_adv) <- tolower(colnames(team_conf_adv))
+
+
+# merging team_season_box_v2 and team_conf_adv to bring in conference info and other additional stats
+team_season_box_v3 <- left_join(team_season_box_v2, team_conf_adv, by = c("season", "team_display_name" = "team"))
+
+# write.csv(team_season_box_v3, "team_season_box_v3.csv", row.names = FALSE)
+
+team_season_box_v4 <- team_season_box_v3 %>%
+  select(-team_id, -team_name, -rk, -div, -w, -l, -`w.l.`)
+
+# adding playoffs_flag of 1 to yearly_playoffs_teams
+yearly_playoffs_teams$playoffs_flag <- 1
+
+# merging team_season_box_v4 and filling NA values in playoffs_flag with 0
+team_season_box_v5 <- team_season_box_v4 %>%
+  left_join(yearly_playoffs_teams %>% select(-conference, team_display_name = team, season, playoffs_flag), 
+            by = c("season", "team_display_name")) %>%
+  mutate(playoffs_flag = ifelse(is.na(playoffs_flag), 0, playoffs_flag))
+
+
+# write.csv(team_season_box_v5, "team_season_box_v5.csv", row.names = FALSE)
+
+# make edits here to drop whatever columns you don't want
+team_season_box_v6 <- team_season_box_v5 %>%
+  select(-wins, -losses)
+
+head(team_season_box_v6)
+
+```
+
+
+```{r}
+# CHANGE YEARS FOR TRAIN AND TEST TO SEE HOW MODELS PERFORM FOR DIFFERENT DURATIONS, filter data based on seasons 
+train_1 <- team_season_box_v6 %>% filter(season >= 2002 & season <= 2019)
+test_1a <- team_season_box_v6 %>% filter(season == 2020)
+# test_1b <- team_season_box_v6 %>% filter(season == 2012)
+
+# train_2 <- team_season_box_v6 %>% filter(season >= 2013 & season <= 2021)
+# test_2a <- team_season_box_v6 %>% filter(season == 2022)
+# # test_2b <- team_season_box_v6 %>% filter(season == 2023)
+
+```
+
+
+```{r}
+# CHOOSE PREDICTORS HERE, REFER OUTPUT TABLE ABOVE TO SEE AVAILABLE PREDICTORS, splitting data into predictors and target, 
+predictors <- train_1[, c('assists', 'blocks', 'defensive_rebounds', 'offensive_rebounds', 
+                          'two_point_field_goal_pct', 'two_point_field_goals_attempted', 
+                          'three_point_field_goal_pct', 'three_point_field_goals_attempted', 
+                          'turnovers', 'free_throw_pct', 'free_throws_attempted')]
+response <- train_1$playoffs_flag
+
+# standardizing predictors
+standardized_predictors <- scale(predictors)
+
+# combining standardized predictors and response
+train_standardized <- data.frame(standardized_predictors, playoffs_flag = response)
+
+# fitting logistic regression on standardized data
+logistic_model_standardized <- glm(playoffs_flag ~ ., data = train_standardized, family = "binomial")
+summary(logistic_model_standardized)
+```
+
+
+
+```{r}
+library(car)
+
+residuals <- residuals(logistic_model_standardized)
+
+par(mfrow=c(2,2), mar=c(4, 4, 2, 2))
+
+for (col in names(predictors)) {  # plotting the first 4 predictors
+  plot(predictors[[col]], residuals, xlab=col, ylab="Residuals", main=paste("Residuals vs", col))
+  abline(h=0, col="red")  # A horizontal line at zero for reference
+}
+
+
+```
+
+
+
+```{r}
+cor(predictors)
+```
+
+
+
+```{r}
+residuals = residuals(logistic_model_standardized, type="deviance")
+cook = cooks.distance(logistic_model_standardized)
+
+qqnorm(residuals, ylab = "Deviance Residuals")
+qqline(residuals)
+
+hist(residuals, xlab="Deviance Residuals", main="", nclass=10, col="orange")
+
+plot(cook, type="h", lwd=3, col="red", ylab="Cook's Distance")
+
+
+```
+
+
+```{r}
+vif(logistic_model_standardized)
+```
+
+
+```{r}
+# standardizing test data using training data's mean and std deviation
+test_1a_standardized <- scale(test_1a[, names(predictors)], center = colMeans(predictors), scale = apply(predictors, 2, sd))
+
+# predicting on the standardized test_1a data
+predicted_probs_standardized <- predict(logistic_model_standardized, newdata = data.frame(test_1a_standardized), type = "response")
+
+# adding predicted probabilities to test_1a
+test_1a$predicted_lr <- predicted_probs_standardized
+
+# for western conference
+top_8_w_lr <- test_1a[test_1a$conf == "W", ] %>% 
+  arrange(desc(predicted_lr)) %>%
+  head(8)
+
+top_8_w_lr$playoff_flag_predicted_lr <- 1
+
+# for eastern conference
+top_8_e_lr <- test_1a[test_1a$conf == "E", ] %>% 
+  arrange(desc(predicted_lr)) %>%
+  head(8)
+
+top_8_e_lr$playoff_flag_predicted_lr <- 1
+
+# combining the flagged teams
+test_1a_flagged_lr <- rbind(top_8_w_lr, top_8_e_lr)
+
+# merging the flagged data with the original test data
+test_1a <- left_join(test_1a, test_1a_flagged_lr[, c("team_display_name", "playoff_flag_predicted_lr")], by = "team_display_name")
+
+# replacing NA values with 0
+test_1a$playoff_flag_predicted_lr[is.na(test_1a$playoff_flag_predicted_lr)] <- 0
+
+# calculate the number of correct predictions
+correct_predictions_lr <- sum(test_1a$playoff_flag_predicted_lr == test_1a$playoffs_flag)
+
+# calculate accuracy
+accuracy_lr <- correct_predictions_lr / nrow(test_1a)
+accuracy_lr
+
+```
+
+
+```{r}
+library(randomForest)
+set.seed(0451)
+rf_model <- randomForest(playoffs_flag ~ assists + blocks + defensive_rebounds + offensive_rebounds + 
+                         two_point_field_goal_pct + two_point_field_goals_attempted +
+                         three_point_field_goal_pct + three_point_field_goals_attempted +
+                         turnovers + free_throw_pct + free_throws_attempted, 
+                         data = train_1, ntree=500)
+
+predicted_probs_rf <- predict(rf_model, newdata = test_1a, type = "response")
+
+test_1a$predicted_rf <- predicted_probs_rf
+
+# for western conference
+top_8_w_rf <- test_1a[test_1a$conf == "W", ] %>% 
+  arrange(desc(predicted_rf)) %>%
+  head(8)
+
+top_8_w_rf$playoff_flag_predicted_rf <- 1
+
+# for eastern conference
+top_8_e_rf <- test_1a[test_1a$conf == "E", ] %>% 
+  arrange(desc(predicted_rf)) %>%
+  head(8)
+
+top_8_e_rf$playoff_flag_predicted_rf <- 1
+
+# combine the flagged teams
+test_1a_flagged_rf <- rbind(top_8_w_rf, top_8_e_rf)
+
+# merging the flagged data with the original test data
+test_1a <- left_join(test_1a, test_1a_flagged_rf[, c("team_display_name", "playoff_flag_predicted_rf")], by = "team_display_name")
+
+# replacing NA values with 0
+test_1a$playoff_flag_predicted_rf[is.na(test_1a$playoff_flag_predicted_rf)] <- 0
+
+
+# calculate the number of correct predictions
+correct_predictions_rf <- sum(test_1a$playoff_flag_predicted_rf == test_1a$playoffs_flag)
+
+# calculate accuracy
+accuracy_rf <- correct_predictions_rf / nrow(test_1a)
+accuracy_rf
+
+
+```
+
+
+
+```{r}
+library(xgboost)
+library(dplyr)
+
+# converting training data to matrix
+train_predictors_xgb <- as.matrix(train_1[,c("assists", "blocks", "defensive_rebounds", "offensive_rebounds", 
+                                   "two_point_field_goal_pct", "two_point_field_goals_attempted", 
+                                   "three_point_field_goal_pct", "three_point_field_goals_attempted", 
+                                   "turnovers", "free_throw_pct", "free_throws_attempted")])
+train_response_xgb <- train_1$playoffs_flag
+
+# Convert testing data to matrix
+test_predictors_xgb <- as.matrix(test_1a[,c("assists", "blocks", "defensive_rebounds", "offensive_rebounds", 
+                                  "two_point_field_goal_pct", "two_point_field_goals_attempted", 
+                                  "three_point_field_goal_pct", "three_point_field_goals_attempted", 
+                                  "turnovers", "free_throw_pct", "free_throws_attempted")])
+
+xgb_model <- xgboost(data = train_predictors_xgb, label = train_response_xgb, nrounds=100, objective="binary:logistic")
+predicted_probs_xgb <- predict(xgb_model, test_predictors_xgb)
+
+
+test_1a$predicted_xgb <- predicted_probs_xgb
+
+# for western conference
+top_8_w_xgb <- test_1a[test_1a$conf == "W", ] %>% 
+  arrange(desc(predicted_xgb)) %>%
+  head(8)
+
+top_8_w_xgb$playoff_flag_predicted_xgb <- 1
+
+# for eastern conference
+top_8_e_xgb <- test_1a[test_1a$conf == "E", ] %>% 
+  arrange(desc(predicted_xgb)) %>%
+  head(8)
+
+top_8_e_xgb$playoff_flag_predicted_xgb <- 1
+
+# combine the flagged teams
+test_1a_flagged_xgb <- rbind(top_8_w_xgb, top_8_e_xgb)
+
+# merging the flagged data with the original test data
+test_1a <- left_join(test_1a, test_1a_flagged_xgb[, c("team_display_name", "playoff_flag_predicted_xgb")], by = "team_display_name")
+
+# replacing NA values with 0
+test_1a$playoff_flag_predicted_xgb[is.na(test_1a$playoff_flag_predicted_xgb)] <- 0
+
+# calculate the number of correct predictions
+correct_predictions_xgb <- sum(test_1a$playoff_flag_predicted_xgb == test_1a$playoffs_flag)
+
+# calculate accuracy
+accuracy_xgb <- correct_predictions_xgb / nrow(test_1a)
+accuracy_xgb
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```{r}
+# 
+# # model without scaling
+# logistic_model_1 <- glm(playoffs_flag ~ assists + blocks + defensive_rebounds + offensive_rebounds + 
+#                        two_point_field_goal_pct + two_point_field_goals_attempted +
+#                        three_point_field_goal_pct + three_point_field_goals_attempted +
+#                        turnovers + free_throw_pct + free_throws_attempted + ortg + drtg, 
+#                      data = train_1, family = "binomial")
+# 
+# summary(logistic_model_1)
+# 
+# predicted_probs <- predict(logistic_model_1, newdata = test_1a, type = "response")
+# 
+# # Add predicted probabilities to test_1a
+# test_1a$predicted_probs <- predicted_probs
+# 
+# predicted_probs <- predict(logistic_model_1, newdata = test_1a, type = "response")
+```
+
+
